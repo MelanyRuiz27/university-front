@@ -1,0 +1,49 @@
+<div class="container">
+    <h2>Eliminar Docent</h2>
+    
+    <div class="form-row" *ngIf="!showMsg">
+        <div class="alert alert-danger col-md-12" role="alert">
+            Are you Sure?
+            <br>
+            <div class="btn-group" role="group">
+                <button class="btn btn-outline-danger btn-sm" (click)="delete()">Eliminar</button>
+                <a class="btn btn-outline-danger btn-sm" [routerLink]="[ '/docent-list' ]">Atras</a>
+            </div>
+        </div>
+    
+    
+    
+    <div class="form-row" *ngIf="showMsg">
+        <div class="alert alert-{{type}} col-md-12" role="alert">
+          {{msg}}
+        </div>
+      </div>
+
+    <form *ngIf="docent">
+        <div class="form-row">
+            <div class="col-md-3">
+                <label>ID:</label>
+                <input type="number" id="ID" name="ID" placeholder=""
+                class="form-control" [(ngModel)]="docent.ID" readonly>
+            </div>
+            <div class="col-md-3">
+                <label>LastName:</label>
+                <input type="text" id="LastName" name="LastName" placeholder="Ingresar el nombre"
+                class="form-control" [(ngModel)]="docent.LastName"readonly>
+            </div>
+            <div class="col-md-3">
+                <label>FirstMidName:</label>
+                <input type="text" id="FirstMidName" name="FirstMidName" placeholder="Ingresar los apellidos"
+                class="form-control" [(ngModel)]="docent.FirstMidName"readonly>
+            </div>
+            <div class="col-md-3">
+                <label>FirstMidName:</label>
+                <input type="text" id="HireDate" name="HireDate" placeholder="Ingresar la fecha"
+                class="form-control" [(ngModel)]="docent.HireDate"readonly>
+            </div>
+        </div>
+        
+        
+    </form>
+</div>
+
